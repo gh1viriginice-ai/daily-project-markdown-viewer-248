@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html><head><title>Markdown Viewer</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+body{font-family:sans-serif;margin:0;display:flex;height:100vh}
+textarea,#preview{flex:1;padding:20px;box-sizing:border-box}
+textarea{font-family:monospace;border-right:2px solid #ccc;resize:none}
+#preview{overflow-y:auto;border-left:1px solid #eee}
+h1,h2,h3{color:#333}code{background:#f4f4f4;padding:2px 6px;border-radius:3px}
+</style></head><body>
+<textarea id="input" oninput="render()">## Hello Markdown
+
+- Item 1
+- Item 2
+
+**Bold** and *italic*</textarea>
+<div id="preview"></div>
+<script>function render(){document.getElementById('preview').innerHTML=marked.parse(document.getElementById('input').value)}render()</script>
+</body></html>
